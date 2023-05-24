@@ -9,7 +9,9 @@ class Solution {
                 sum = sum + accounts[i][j];
             }
             
-            wealth = Math.max(wealth , sum);
+            if(wealth<sum){
+                wealth = sum;
+            }
         }
         return wealth;
     }
