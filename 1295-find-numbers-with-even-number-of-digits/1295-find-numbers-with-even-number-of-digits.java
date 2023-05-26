@@ -1,19 +1,8 @@
 class Solution {
     public int findNumbers(int[] nums) {
         int count = 0;
-        for (int num : nums) {
-            if (countDigits(num) % 2 == 0) {
-                count++;
-            }
-        }
-        return count;
-    }
-    
-    public int countDigits(int num) {
-        int count = 0;
-        while (num != 0) {
-            num /= 10;
-            count++;
+        for(int a: nums){
+            if((a>9 && a<100) || (a>999 && a<10000) || a == 100000) count++;
         }
         return count;
     }
