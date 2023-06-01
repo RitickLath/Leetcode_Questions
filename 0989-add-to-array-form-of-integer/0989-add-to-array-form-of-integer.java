@@ -1,28 +1,22 @@
-import java.util.ArrayList;
-import java.util.List;
-
 class Solution {
     public List<Integer> addToArrayForm(int[] num, int k) {
-        List<Integer> arr = new ArrayList<>();
-        int n = num.length - 1;
-        int carry = 0;
-
-        while (n >= 0 || k > 0 || carry > 0) {
-            int digit = carry;
-            
-            if (n >= 0)
-                digit += num[n];
-            
-            if (k > 0) {
-                digit += k % 10;
-                k /= 10;
-            }
-            
-            arr.add(0, digit % 10);
-            carry = digit / 10;
+        ArrayList<Integer> arr = new ArrayList<>();
+        int n = num.length-1;
+        int sum;
+        for(int i = 0 ; i<num.length ; i++){
+            sum = num[n] + k;
+            if(n==0){num[n] = sum;break;}
+            else{num[n] = sum%10;}
             n--;
+            k = sum/10;
         }
         
+        for(int i = 0 ; i<num.length ; i++){
+            String s = "" + num[i];
+            for(int j = 0 ; j<s.length() ; j++){
+                arr.add(s.charAt(j)-'0');
+            }
+        }
         return arr;
     }
 }
