@@ -10,12 +10,10 @@ class Solution {
             n--;
             k = sum/10;
         }
-        
-        for(int i = 0 ; i<num.length ; i++){
-            String s = "" + num[i];
-            for(int j = 0 ; j<s.length() ; j++){
-                arr.add(s.charAt(j)-'0');
-            }
+        String s = "";
+        for(int i = 0 ; i<num.length ; i++){s = s+num[i];}
+        for(int i = 0 ; i<s.length() ; i++){
+            arr.add(s.charAt(i)-'0');
         }
         return arr;
     }
