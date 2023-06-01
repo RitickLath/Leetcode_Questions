@@ -7,7 +7,6 @@ class Solution {
             sum = num[n] + k;
             if(n==0){num[n] = sum;break;}
             else{num[n] = sum%10;}
-            
             n--;
             k = sum/10;
         }
