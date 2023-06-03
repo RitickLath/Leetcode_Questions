@@ -1,14 +1,26 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
+        int end = nums.length - 1;
+        boolean changed = true;
+        int t;
         
-        HashSet<Integer> arr = new HashSet<>();
-        
-        for(int i = 0 ; i<nums.length ; i++){
-            if(arr.contains(nums[i])){
-                return true;
+        while (end > 0) {
+            changed = false;
+            for (int i = 0; i < end; i++) {
+                if (nums[i] == nums[i+1]) return true;
+                if (nums[i] > nums[i+1]) {
+                    t = nums[i];
+                    nums[i] = nums[i+1];
+                    nums[i+1] = t;
+                    changed = true;
+                }
             }
-            arr.add(nums[i]);
+            if (!changed) {
+                break;
+            }
+            end--;
         }
+        
         return false;
-    }
+	}
 }
