@@ -8,14 +8,14 @@ class Solution {
         int c = 0;
         int mid = s.length() / 2;
         
-        for (int i = 0; i < s.length(); i++) {
-            if (isVowel(s.charAt(i))) {
-                if (i < mid) {
+        for (int i = 0; i < s.length()/2; i++) {
+            if(isVowel(s.charAt(i))) {
                     c++;
-                } else {
-                    c--;
-                }
             }
+            if(isVowel(s.charAt(s.length()-1-i))){
+                c--;
+            }
+            
         }
         
         return c == 0;
