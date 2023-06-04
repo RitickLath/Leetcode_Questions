@@ -1,20 +1,14 @@
 class Solution {
+    protected static boolean isVowel(char c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+        || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
+    }
     public boolean halvesAreAlike(String s) {
-        s = s.toLowerCase();
-        int a = 0;
-        int b = 0;
-        for(int i = 0 ; i<s.length()/2 ; i++){
-            if(s.charAt(i) == 'a' || s.charAt(i)== 'e' || s.charAt(i)=='i' || s.charAt(i)=='o' || s.charAt(i)=='u'){
-                a++;
-            }
+        int checkingHalves = 0;
+        for(int i = 0, j = s.length() - 1; i < s.length() / 2; i++,j--){
+            if(isVowel(s.charAt(i))) checkingHalves++;
+            if(isVowel(s.charAt(j))) checkingHalves--;
         }
-        
-        for(int i = s.length()/2 ; i<s.length() ; i++){
-            if(s.charAt(i) =='a' || s.charAt(i) =='e' || s.charAt(i) =='i' || s.charAt(i) =='o' || s.charAt(i) =='u'){
-                b++;
-            }
-        }
-        
-        return a==b;
+        return checkingHalves == 0;
     }
 }
