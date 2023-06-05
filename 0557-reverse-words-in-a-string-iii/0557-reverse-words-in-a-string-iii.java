@@ -9,6 +9,6 @@ class Solution {
             res.append(temp.reverse());
             res.append(" ");
         }
-        return res.toString().trim();
+        return res.toString().substring(0,s.length());
     }
 }
