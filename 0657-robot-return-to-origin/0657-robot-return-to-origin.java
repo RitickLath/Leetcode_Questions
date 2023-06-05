@@ -7,6 +7,8 @@ class Solution {
         int horizontal = 0;
         int vertical = 0;
 
+        // Used toCharArray(): Converted the moves string to a character array using toCharArray() outside the loop. This avoids calling moves.charAt(i) repeatedly, which improves performance.
+        
         for (char move : moves.toCharArray()) {
             if (move == 'R') {
                 horizontal++;
