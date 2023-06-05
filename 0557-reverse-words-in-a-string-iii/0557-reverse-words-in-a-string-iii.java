@@ -1,20 +1,14 @@
 class Solution {
-
     public String reverseWords(String s) {
-        StringBuilder result = new StringBuilder();
-        int lastSpaceIndex = -1;
-        for (int strIndex = 0; strIndex < s.length(); strIndex++) {
-            if ((strIndex == s.length() - 1) || s.charAt(strIndex) == ' ') {
-                int reverseStrIndex = (strIndex == s.length() - 1) ? strIndex : strIndex - 1;
-                for (; reverseStrIndex > lastSpaceIndex; reverseStrIndex--) {
-                    result.append(s.charAt(reverseStrIndex));
-                }
-                if (strIndex != s.length() - 1) {
-                    result.append(' ');
-                }
-                lastSpaceIndex = strIndex;
-            }
+        String[] words= s.split(" ");
+        
+        StringBuilder res=new StringBuilder();
+        for(int i=0;i<words.length;i++){
+            StringBuilder temp= new StringBuilder(words[i]);
+            
+            res.append(temp.reverse());
+            res.append(" ");
         }
-        return new String(result);
+        return res.toString().substring(0,s.length());
     }
 }
