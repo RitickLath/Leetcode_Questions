@@ -10,14 +10,14 @@ class Solution {
         String ss = str.toString();
         String[] arr = ss.split(" ");
         
-        StringBuilder strr = new StringBuilder();
+        s = "";
         
         for(int i = arr.length-1 ; i>=0 ; i--){
-            strr.append(arr[i]);
-            strr.append(" ");
+            s = s + arr[i] + " ";
+            
         }
         
-        return strr.toString().substring(0,s.length());
+        return s.substring(0,s.length()-1);
         
     }
 }
