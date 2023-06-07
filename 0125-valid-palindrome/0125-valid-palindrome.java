@@ -5,11 +5,9 @@ class Solution {
         StringBuilder str = new StringBuilder();
         
         for(int i = 0 ; i<s.length() ; i++){
-            if(s.charAt(i) - 'a' >=0 && s.charAt(i) - 'a'<26){
-                str.append(s.charAt(i));
-            }
-            if(s.charAt(i)-'0' >=0 && s.charAt(i)-'0' <=9){
-                str.append(s.charAt(i));
+            char c = s.charAt(i);
+            if (Character.isLetterOrDigit(c)) {
+                str.append(c);
             }
         }
         
