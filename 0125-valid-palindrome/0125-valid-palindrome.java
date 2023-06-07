@@ -11,6 +11,8 @@ class Solution {
             }
         }
         
+        if(s.length() == 1){return true;}
+        
         s = str.toString();
         
         for(int i = 0 ; i<s.length()/2 ; i++){
