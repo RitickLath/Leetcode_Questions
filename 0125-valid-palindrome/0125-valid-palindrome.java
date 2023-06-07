@@ -11,7 +11,7 @@ class Solution {
             }
         }
         
-        if(s.length() == 1){return true;}
+        
         
         s = str.toString();
         
